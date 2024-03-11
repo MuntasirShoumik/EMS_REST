@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "d21b7cf9-32ef-4db5-aaeb-8c79d91970ad",
+		"name": "EMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30044033"
+	},
+	"item": [
+		{
+			"name": "manager signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"manager\",\r\n    \"email\": \"manager@gmail.com\",\r\n    \"phone\": \"01973298\",\r\n    \"password\": \"1111\",\r\n    \"password_confirmation\":\"1111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "manager login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"manager@gmail.com\",\r\n    \"password\":\"1111\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/manager_login"
+			},
+			"response": []
+		},
+		{
+			"name": "manager create emp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NywiZXhwIjoxNzAxODQyMjQxfQ.5fbSbDsUHYa93I3z4CLxIQbhIuQHwE7bc1F_jrfEyMo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employee\":{\r\n    \"name\":\"muntasir5\",\r\n    \"email\":\"muntasir55@gmail.com\",\r\n    \"phone\": \"929844392\",\r\n    \"position\":\"intern\",\r\n    \"dept\":\"R&D\",\r\n    \"password\":\"1111\",\r\n    \"password_confirmation\":\"1111\"\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/v1/create_emp"
+			},
+			"response": []
+		},
+		{
+			"name": "manager view all emp list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsImV4cCI6MTY5ODQwMzg0Mn0.GwVTcIx-XMh-7uvXTsH3bcPCBdUOzYSayjMV6vp4qNM",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/api/v1/all_emp"
+			},
+			"response": []
+		},
+		{
+			"name": "manager refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refresh_token\":\"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NywiZXhwIjoxNzAzNzQ2MTkwfQ.eZ3QZbMukk_4qXphMmgs8UBH9GUpTvceeeY5QvHKsy4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/refresh_manager_token"
+			},
+			"response": []
+		},
+		{
+			"name": "manager search emp",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsImV4cCI6MTY5ODMxMzY2M30.VFjen1Fab_d26rw2LDNnS2WIsx_1JlQLdWqoHocaEek",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/api/v1/employee/466"
+			},
+			"response": []
+		},
+		{
+			"name": "manager update emp",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsImV4cCI6MTY5ODMxMzY2M30.VFjen1Fab_d26rw2LDNnS2WIsx_1JlQLdWqoHocaEek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"employee\":{\r\n    \"name\":\"updated\",\r\n    \"email\":\"empupdated@gmail.com\",\r\n    \"phone\": \"929844392\",\r\n    \"position\":\"intern\",\r\n    \"dept\":\"R&D\",\r\n    \"password\":\"1111\",\r\n    \"password_confirmation\":\"1111\"\r\n    }\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/v1/update_emp/46"
+			},
+			"response": []
+		},
+		{
+			"name": "manager delete emp",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MzQsImV4cCI6MTY5NzYwNDQxMn0.oSIlMxsSVg0eE45BSbQO2H23yc4Wbw-3Rt_EyTyBPco",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/destroy_emp/34",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"destroy_emp",
+						"34"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager create task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsImV4cCI6MTY5ODMxMzY2M30.VFjen1Fab_d26rw2LDNnS2WIsx_1JlQLdWqoHocaEek",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task\":{\r\n        \"title\": \"title of the task\", \r\n        \"description\": \"this is how you should do....\",\r\n        \"deadline\": \"2023-11-15\",\r\n        \"status\": \"panding\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/v1/set_task/8"
+			},
+			"response": []
+		},
+		{
+			"name": "manager view task of emp under",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsImV4cCI6MTY5ODMxMzY2M30.VFjen1Fab_d26rw2LDNnS2WIsx_1JlQLdWqoHocaEek",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/api/v1/get_task"
+			},
+			"response": []
+		},
+		{
+			"name": "manager view all request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsImV4cCI6MTY5ODMxMzY2M30.VFjen1Fab_d26rw2LDNnS2WIsx_1JlQLdWqoHocaEek",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/api/v1/view_requests"
+			},
+			"response": []
+		},
+		{
+			"name": "manager update request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTYsImV4cCI6MTY5ODQwNTM5N30.T5HsJ6a9f_hIvnTtV1JlLagwB4fkA76FzOpuhuF2Zv4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"leave_request\":{\r\n        \"status\": \"aproved\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/v1/update_request/188"
+			},
+			"response": []
+		},
+		{
+			"name": "manager reset password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNjk3MTEyNDU3fQ.WBprs8WmM1IHaJlQOs4khMRKsX-LFDJlkG7cK2FTmgk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"current_password\": \"2222\",\r\n    \"update\":{\r\n        \r\n        \"password\": \"1111dd\",\r\n        \"password_confirmation\": \"1\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/manager_password_reset"
+			},
+			"response": []
+		},
+		{
+			"name": "manager logout",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/manager_logout"
+			},
+			"response": []
+		},
+		{
+			"name": "emp login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"muntasir2@gmail.com\",\r\n    \"password\":\"1111\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/emp_login"
+			},
+			"response": []
+		},
+		{
+			"name": "emp view all tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDcsImV4cCI6MTY5ODMxNDk5NX0.5FuiCVrWnWPFqJIVKzdvXwLIvAMM6ofrcVAVfzMxcK4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/v1/assigned_tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "emp refresh token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwiZXhwIjoxNjk5MjY0MDk1fQ.z48A6tm6zR9bs4DmOrS6nugpm6k9S6WkfT_LlmG5b34\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/refresh_emp_token"
+			},
+			"response": []
+		},
+		{
+			"name": "emp update on task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDcsImV4cCI6MTY5ODMxNDk5NX0.5FuiCVrWnWPFqJIVKzdvXwLIvAMM6ofrcVAVfzMxcK4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"task\":{\r\n        \"status\": \"done\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/v1/update_tsak/44"
+			},
+			"response": []
+		},
+		{
+			"name": "emp make leave request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDcsImV4cCI6MTY5ODQwNTQ0M30.Wk76KnvcsKxsXSH-g3atSaWSb0Yi7dRGO9foQCAjiVU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"leave_request\":{\r\n        \"start_date\": \"2023-11-25\",\r\n        \"end_date\": \"2023-11-30\",\r\n        \"reason\": \"mone chaise tai\",\r\n        \"status\": \"panding\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/api/v1/req_leave"
+			},
+			"response": []
+		},
+		{
+			"name": "emp view requests status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDcsImV4cCI6MTY5ODMxNDk5NX0.5FuiCVrWnWPFqJIVKzdvXwLIvAMM6ofrcVAVfzMxcK4",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/api/v1/requests_status"
+			},
+			"response": []
+		},
+		{
+			"name": "emp view remaining leave",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NDcsImV4cCI6MTY5ODMxNDk5NX0.5FuiCVrWnWPFqJIVKzdvXwLIvAMM6ofrcVAVfzMxcK4",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/api/v1/leave_count"
+			},
+			"response": []
+		},
+		{
+			"name": "employee reset password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"current_password\": \"1111\",\r\n    \"update\":{\r\n        \r\n        \"password\": \"2222\",\r\n        \"password_confirmation\": \"2222\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:3000/emp_password_reset"
+			},
+			"response": []
+		},
+		{
+			"name": "emp logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:3000/emp_logout"
+			},
+			"response": []
+		}
+	]
+}

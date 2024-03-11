@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby.exe
+require_relative "../config/boot"
+require "rake"
+
+# require "resque/tasks"
+
+# task 'resque:setup' => :environments
+Rake.application.run
